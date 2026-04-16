@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SEO Blog Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>SEO Blog Generator Pro版</h1>
+      <p class="subtitle">キーワードを入力するだけで高品質SEO記事を自動生成できます</p>
+    </header>
+
+    <main class="main">
+
+      <!-- キーワード入力 -->
+      <section class="panel">
+        <h2 class="panel-title">キーワード（空白区切りで複数指定）</h2>
+        <input id="keyword" placeholder="例：SEO対策　初心者　ブログ　やり方" />
+        <div class="row">
+          <button id="btn-generate-titles" class="btn primary">タイトル候補を生成</button>
+        </div>
+      </section>
+
+      <!-- タイトル候補 -->
+      <section class="panel">
+        <h2 class="panel-title">タイトル候補（クリックで選択・編集可）</h2>
+        <div id="titles" class="titles-grid"></div>
+
+        <label class="label">選択・編集済みタイトル</label>
+        <input id="selectedTitle" placeholder="ここで加筆修正できます" />
+      </section>
+
+      <!-- 記事生成 -->
+      <section class="panel">
+        <h2 class="panel-title">記事生成</h2>
+        <div class="row">
+          <button id="btn-generate-article" class="btn accent">ブログ本文を生成</button>
+          <div class="spacer"></div>
+          <button id="btn-copy-html" class="btn outline small">HTMLをコピー</button>
+        </div>
+        <p class="note">記事生成には2〜3分程度かかります。</p>
+      </section>
+
+      <!-- HTMLプレビュー（非表示でHTML保持） -->
+      <section class="panel result-panel" style="display:none;">
+        <div id="articlePreview" class="article-preview"></div>
+      </section>
+
+      <!-- 生成結果プレビュー -->
+      <section class="panel result-panel">
+        <h2 class="panel-title">生成結果プレビュー</h2>
+        <div id="articleDisplay" class="article-preview">
+          <p style="color:#6b7c93;">記事を生成するとここに表示されます</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
